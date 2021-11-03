@@ -63,6 +63,7 @@ import { LoadingPageComponent } from './loadingPage/loading-page.component';
 import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.component';
 import { DialogLinkInteraactionboxComponent } from './playlist/dialogComponents/dialog-link-interaactionbox/dialog-link-interaactionbox.component';
 import { ErrorPageComponent } from './errorPage/error-page.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 /**
  * Import module Sub-Application
@@ -118,7 +119,8 @@ import { PipeModule } from '../../projects/deezer/src/app/pipe/pipe.module';
     LoadingPageComponent,
     DialogSiteASFRComponent,
     DialogLinkInteraactionboxComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,

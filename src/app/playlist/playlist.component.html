@@ -109,6 +109,14 @@
           <i class="big user icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconUser" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
+        <a id="questionIcon" class="item" (click)="openTutorial()"
+           (mouseenter)="showProgressIndicator('questionIcon', idProgressIndicatorIconQuestion); showBtn('questionIcon')"
+           (mouseleave)="hideProgressIndicator('questionIcon', idProgressIndicatorIconQuestion); hideBtn('questionIcon')"
+           matTooltip="{{'playlist.questionBtn' | translate}}"
+           matTooltipPosition="before">
+          <i class="big question icon"></i>
+          <app-progress-indicator [id]="idProgressIndicatorIconQuestion" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
+        </a>
         <a id="logoutIcon" class="item" (click)="logout()"
            (mouseenter)="showProgressIndicator('logoutIcon', idProgressIndicatorIconLogout); showBtn('logoutIcon')"
            (mouseleave)="hideProgressIndicator('logoutIcon', idProgressIndicatorIconLogout); hideBtn('logoutIcon')"

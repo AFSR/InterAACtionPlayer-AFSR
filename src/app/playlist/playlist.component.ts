@@ -44,6 +44,7 @@ import { StatusInternetService } from "../services/status-internet.service";
  * Import Models
  */
 import { Types } from './model/types-interface';
+import {TutorialComponent} from "../tutorial/tutorial.component";
 
 /**
  * Import functions javascript
@@ -113,6 +114,7 @@ export class PlaylistComponent implements OnInit {
   idProgressIndicatorIconUser = "iconUserProgressSpinner";
   idProgressIndicatorIconLogout = "iconLogoutProgressSpinner";
   idProgressIndicatorIconNew = "iconNewProgressSpinner";
+  idProgressIndicatorIconQuestion = "iconQuestionProgressSpinner";
 
   refresh = false;
   loopProgressIndicator = false;
@@ -691,6 +693,13 @@ export class PlaylistComponent implements OnInit {
     setTimeout(() => {
       this.refresh = false;
     }, 50);
+  }
+
+  openTutorial(){
+    this.dialog.open(TutorialComponent, {
+      height: '75%',
+      width: '75%'
+    });
   }
 
   /**

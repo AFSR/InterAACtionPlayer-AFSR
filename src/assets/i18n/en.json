@@ -32,6 +32,7 @@
     "userBtn": "Account Login",
     "deleteBtn": "Delete Playlist",
     "loadBtn": "Load a Playlist",
+    "questionBtn": "Show tutorial",
     "logoutBtn": "Logout",
     "playlist": "Playlist",
     "up": "Up",
