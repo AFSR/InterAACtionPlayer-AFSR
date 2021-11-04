@@ -34,6 +34,7 @@ import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
  * Import Services
  */
 import { GlobalService } from './services/global.service';
+import { TutorialComponent } from './pages/tutorial/tutorial.component';
 
 const providers = [
   GlobalService,
@@ -43,6 +44,7 @@ const providers = [
   declarations: [
     AppComponent,
     NavBarComponent,
+    TutorialComponent,
   ],
     imports: [
         BrowserModule,

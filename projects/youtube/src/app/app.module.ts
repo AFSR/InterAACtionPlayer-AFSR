@@ -30,11 +30,13 @@ import { AppComponent } from './app.component';
 import { SearchContainerComponent } from './search/container/search-container.component';
 import { SearchInputComponent } from './search/components/search-input/search-input.component';
 import { SearchListComponent } from './search/components/search-list/search-list.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 /**
  * Import Pipe
  */
 import { YoutubePipe } from './pipe/youtube.pipe';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 const providers = [];
 
@@ -44,7 +46,8 @@ const providers = [];
     SearchContainerComponent,
     SearchInputComponent,
     SearchListComponent,
-    YoutubePipe
+    YoutubePipe,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ const providers = [];
     HttpClientModule,
     AppRoutingModule,
     TranslateModule,
+    MatTooltipModule,
   ],
   providers: providers,
   exports: [

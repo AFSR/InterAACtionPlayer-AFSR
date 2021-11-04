@@ -246,6 +246,9 @@
     "cancel": "Annuler",
     "add": "Ajouter"
   },
+  "youtube": {
+    "questionBtn": "Afficher le tutoriel"
+  },
   "youtubeSearchContainer": {
     "noVideo": "Pas de vidéo trouvé !"
   },
@@ -260,7 +263,8 @@
   "spotifyNavbar": {
     "home": "Accueil",
     "search": "Recherche",
-    "playlist": "Playlist"
+    "playlist": "Playlist",
+    "tutorial": "Tutoriel"
   },
   "spotifyHome": {
     "title": "Nouvelles musiques"
@@ -289,7 +293,8 @@
   },
   "deezerNavbar": {
     "home": "Accueil",
-    "playlist": "Playlist"
+    "playlist": "Playlist",
+    "tutorial": "Tutoriel"
   },
   "deezerArtist": {
     "followers": "Abonnés",

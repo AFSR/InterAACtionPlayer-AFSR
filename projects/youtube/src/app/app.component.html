@@ -1,3 +1,12 @@
+<div [ngClass]="theme" class="ui secondary menu">
+  <div class="right menu">
+    <a class="item" (click)="openTutorial()"
+       matTooltip="{{'playlist.questionBtn' | translate}}"
+       matTooltipPosition="before">
+      <i class="big question icon"></i>
+    </a>
+  </div>
+</div>
 <div class="ui centered grid" style="margin-top: 3rem;">
   <div class="fourteen wide column">
     <h1 [ngClass]="theme" class="ui centered aligned header">

@@ -246,6 +246,9 @@
     "cancel": "Cancel",
     "add": "Add"
   },
+  "youtube": {
+    "questionBtn": "Show tutorial"
+  },
   "youtubeSearchContainer": {
     "noVideo": "No video found !"
   },
@@ -260,7 +263,8 @@
   "spotifyNavbar": {
     "home": "Home",
     "search": "Search",
-    "playlist": "Playlist"
+    "playlist": "Playlist",
+    "tutorial": "Tutorial"
   },
   "spotifyHome": {
     "title": "New Releases"
@@ -289,7 +293,8 @@
   },
   "deezerNavbar": {
     "home": "Home",
-    "playlist": "Playlist"
+    "playlist": "Playlist",
+    "tutorial": "Tutorial"
   },
   "deezerArtist": {
     "followers": "Followers",

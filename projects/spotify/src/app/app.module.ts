@@ -34,6 +34,8 @@ const customNotifierOptions: NotifierOptions = {
  * Import Services
  */
 import { GlobalService } from './services/global.service';
+import { TutorialComponent } from './pages/tutorial/tutorial.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 const providers = [
   GlobalService,
@@ -43,14 +45,16 @@ const providers = [
   declarations: [
     AppComponent,
     NavBarComponent,
+    TutorialComponent,
   ],
-  imports: [
-    BrowserModule,
-    NotifierModule.withConfig(customNotifierOptions),
-    AppRoutingModule,
-    HttpClientModule,
-    TranslateModule,
-  ],
+    imports: [
+        BrowserModule,
+        NotifierModule.withConfig(customNotifierOptions),
+        AppRoutingModule,
+        HttpClientModule,
+        TranslateModule,
+        MatTooltipModule,
+    ],
   providers: providers,
   bootstrap: [
     AppComponent
