@@ -13,4 +13,4 @@ app.get('/*', function(req, res) {
   res.sendFile('index.html', {root: 'dist/project-multimedia/'}
 );
 });
-app.listen(process.env.PORT || 80);
+app.listen(process.env.PORT || 8080);
