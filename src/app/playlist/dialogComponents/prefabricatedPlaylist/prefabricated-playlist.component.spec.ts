@@ -4,6 +4,7 @@ import { PrefabricatedPlaylistComponent } from './prefabricated-playlist.compone
 import { MatDialogModule } from '@angular/material/dialog';
 import { NotifierModule } from 'angular-notifier';
 import {TranslateModule} from '@ngx-translate/core';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('PrefabricatedPlaylistComponent', () => {
   let component: PrefabricatedPlaylistComponent;
@@ -12,7 +13,7 @@ describe('PrefabricatedPlaylistComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ PrefabricatedPlaylistComponent ],
-      imports: [ MatDialogModule, NotifierModule, TranslateModule.forRoot() ]
+      imports: [ MatDialogModule, NotifierModule, TranslateModule.forRoot(), RouterTestingModule ]
     })
     .compileComponents();
   });
