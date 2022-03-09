@@ -6,6 +6,7 @@ import { GlobalService } from '../../../../../projects/spotify/src/app/services/
 import { HttpClientModule } from '@angular/common/http';
 import { NotifierModule } from 'angular-notifier';
 import {TranslateModule} from '@ngx-translate/core';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AccountsComponent', () => {
   let component: AccountsComponent;
@@ -14,7 +15,7 @@ describe('AccountsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AccountsComponent ],
-      imports: [ MatDialogModule, HttpClientModule, NotifierModule, TranslateModule.forRoot() ],
+      imports: [ MatDialogModule, HttpClientModule, NotifierModule, TranslateModule.forRoot(), RouterTestingModule ],
       providers: [ GlobalService ]
     })
     .compileComponents();

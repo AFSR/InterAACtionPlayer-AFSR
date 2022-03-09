@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DialogLinkInteraactionboxComponent } from './dialog-link-interaactionbox.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('DialogLinkInteraactionboxComponent', () => {
   let component: DialogLinkInteraactionboxComponent;
@@ -8,7 +10,8 @@ describe('DialogLinkInteraactionboxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogLinkInteraactionboxComponent ]
+      declarations: [ DialogLinkInteraactionboxComponent ],
+      imports:[RouterTestingModule, TranslateModule.forRoot()]
     })
     .compileComponents();
   });
