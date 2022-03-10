@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as $ from 'jquery';
+import { LanguageService } from "../../../../../src/app/services/language.service";
 
 @Injectable()
 export class GlobalService {
 
   clientId = 'cf0aa060f87b4c6e9edb2a1e067fd86a';
   clientSecret = '5beabd4b8c67453b8770e1fe309a105f';
-  redirectUriHome = "http://localhost:4200/home";
-  redirectUri = "http://localhost:4200/";
+  redirectUriHome = "http://localhost:4202/home";
+  redirectUri = "http://localhost:4202/#/fr/playlist";
 
   accessToken = this.getToken().subscribe(data => {this.accessToken = data['access_token'];});
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private languageService: LanguageService) {
+    this.redirectUri = "http://localhost:4202/#/" + languageService.activeLanguage + "/playlist";
   }
 
   /**
