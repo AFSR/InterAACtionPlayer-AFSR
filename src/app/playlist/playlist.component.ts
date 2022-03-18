@@ -167,11 +167,28 @@ export class PlaylistComponent implements OnInit {
         this.playList = this.playlistService.playList;
         this.displaySideBar();
         if (this.isPlaylistEmpty()){
-          this.goEdit()
+          this.setDefaultPlaylist();
         }
       },500);
     },500 );
     this.checkStatus();
+  }
+
+  setDefaultPlaylist(){
+    this.playlistService.playList = (function() {
+      let json = null;
+      $.ajax({
+        'async': false,
+        'global': false,
+        'url': '../../assets/PrefrabricatedPlaylist/Masha&Michca.json',
+        'dataType': "json",
+        'success': function(data) {
+          json = data;
+        }
+      });
+      return json;
+    })();
+    this.playList = this.playlistService.playList;
   }
 
   checkStatus(){
