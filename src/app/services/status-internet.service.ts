@@ -7,17 +7,21 @@ import { LanguageService } from "./language.service";
 })
 export class StatusInternetService {
 
+  public internetStatus: boolean = false;
+
   constructor(private router: Router,
               private languageService: LanguageService) {
+    window.addEventListener('online', () => {this.internetStatus = true});
+    window.addEventListener('offline', () => {this.internetStatus = false});
   }
 
   checkStatusInternet(){
-    if (!navigator.onLine){
+    if (!this.internetStatus){
       this.router.navigate([this.languageService.getLanguage() + '/error']);
     }
   }
 
   getStatusInternet(){
-    return navigator.onLine;
+    return this.internetStatus;
   }
 }
