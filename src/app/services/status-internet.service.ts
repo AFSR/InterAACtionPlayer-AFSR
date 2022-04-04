@@ -1,27 +1,55 @@
 import { Injectable } from '@angular/core';
 import { Router } from "@angular/router";
 import { LanguageService } from "./language.service";
+import {SpeedTestService} from "ng-speed-test";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatusInternetService {
 
-  public internetStatus: boolean = false;
+  public statusInternet: boolean = true;
 
   constructor(private router: Router,
-              private languageService: LanguageService) {
-    window.addEventListener('online', () => {this.internetStatus = true});
-    window.addEventListener('offline', () => {this.internetStatus = false});
+              private languageService: LanguageService,
+              private speedTestService: SpeedTestService) {
+    this.speedTestService.getMbps({
+      iterations: 1,
+      retryDelay: 1
+    }).subscribe(
+      (speed) => {
+        if (speed == 0){
+          this.statusInternet = false;
+        }
+      }
+    )
   }
 
   checkStatusInternet(){
-    if (!this.internetStatus){
+    if (!this.statusInternet){
       this.router.navigate([this.languageService.getLanguage() + '/error']);
     }
   }
 
   getStatusInternet(){
-    return this.internetStatus;
+    return this.statusInternet;
+  }
+
+  retryInternetStatus(){
+    this.speedTestService.getMbps({
+      iterations: 1,
+      retryDelay: 1
+    }).subscribe(
+      (speed) => {
+        if (speed == 0){
+          this.statusInternet = false;
+        }else {
+          this.statusInternet = true;
+        }
+      }
+    )
+    setTimeout(() => {
+      return this.statusInternet;
+    }, 5000)
   }
 }

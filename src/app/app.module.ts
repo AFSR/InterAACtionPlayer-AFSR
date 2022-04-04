@@ -87,6 +87,7 @@ export function createTranslateLoader(http: HttpClient) {
 import { MapPipe } from './playlist/pipe/map.pipe';
 import { PipesModule } from '../../projects/spotify/src/app/pipes/pipes.module';
 import { PipeModule } from '../../projects/deezer/src/app/pipe/pipe.module';
+import {SpeedTestModule} from "ng-speed-test";
 
 @NgModule({
   declarations: [
@@ -122,6 +123,7 @@ import { PipeModule } from '../../projects/deezer/src/app/pipe/pipe.module';
   ],
   imports: [
     BrowserModule,
+    SpeedTestModule,
     BrowserAnimationsModule,
     NotifierModule.withConfig(customNotifierOptions),
     MatDialogModule,

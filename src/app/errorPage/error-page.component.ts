@@ -3,6 +3,7 @@ import { LogoutAppComponent } from "../playlist/dialogComponents/logoutApp/logou
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { LanguageService } from "../services/language.service";
+import { StatusInternetService } from "../services/status-internet.service";
 
 @Component({
   selector: 'app-error-page',
@@ -12,24 +13,23 @@ import { LanguageService } from "../services/language.service";
 export class ErrorPageComponent implements OnInit {
 
   noInternet = true;
-  playlistButton = "error.goPlaylist";
+  playlistButton = "error.goOfflinePlaylist";
 
   constructor(private dialog: MatDialog,
               private router: Router,
-              private languageService: LanguageService) {
+              private languageService: LanguageService,
+              private statusInternetService: StatusInternetService) {
   }
 
   ngOnInit(): void {
   }
 
   checkInternetConnexion(){
-    if (navigator.onLine){
+    if (this.statusInternetService.getStatusInternet()){
       this.noInternet = false;
-      this.playlistButton = "error.goOfflinePlaylist";
-      return true;
-    }else {
       this.playlistButton = "error.goPlaylist";
-      return false;
+    }else {
+      this.playlistButton = "error.goOfflinePlaylist";
     }
   }
 
