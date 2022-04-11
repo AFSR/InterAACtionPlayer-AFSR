@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotifierModule } from 'angular-notifier';
 import {TranslateModule} from '@ngx-translate/core';
 import {RouterTestingModule} from '@angular/router/testing';
+import {SpeedTestModule} from "ng-speed-test";
 
 describe('AccountsComponent', () => {
   let component: AccountsComponent;
@@ -15,7 +16,7 @@ describe('AccountsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AccountsComponent ],
-      imports: [ MatDialogModule, HttpClientModule, NotifierModule, TranslateModule.forRoot(), RouterTestingModule ],
+      imports: [ MatDialogModule, HttpClientModule, NotifierModule, TranslateModule.forRoot(), RouterTestingModule, SpeedTestModule ],
       providers: [ GlobalService ]
     })
     .compileComponents();
