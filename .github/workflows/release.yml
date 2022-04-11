@@ -27,7 +27,7 @@ jobs:
 
       - name: Tar gz
         run: |
-          tar -czvf InterAACtionPlayer.tar.gz ./dist/InterAACtionPlayer
+          tar -czvf InterAACtionPlayer.tar.gz ./dist/InterAACtionPlayer/dist/InterAACtionPlayer
 
       - name: New tag
         id: new-tag
