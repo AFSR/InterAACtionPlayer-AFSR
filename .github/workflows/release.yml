@@ -27,7 +27,8 @@ jobs:
 
       - name: Tar gz
         run: |
-          tar -czvf InterAACtionPlayer.tar.gz ./dist/InterAACtionPlayer/dist/InterAACtionPlayer
+          cd ./dist/InterAACtionPlayer
+          tar -czvf InterAACtionPlayer.tar.gz *
 
       - name: New tag
         id: new-tag
@@ -62,5 +63,5 @@ jobs:
         with:
           release-url: ${{ steps.create_release.outputs.upload_url }}
           files: |
-            InterAACtionPlayer.tar.gz
+            ~/dist/InterAACtionPlayer/InterAACtionPlayer.tar.gz
           github-token: ${{ secrets.GITHUB_TOKEN }}
