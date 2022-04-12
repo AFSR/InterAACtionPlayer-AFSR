@@ -31,10 +31,14 @@ jobs:
           tar -czvf InterAACtionPlayer.tar.gz *
           mv InterAACtionPlayer.tar.gz ../../
 
+      - name: Get Env
+        run: |
+          echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
+
       - name: New tag
         id: new-tag
         run: |
-          LATEST_RELEASE_INFO=$(curl -s https://api.github.com/repos/AFSR/InteraactionPlayer-AFSR/releases/latest)
+          LATEST_RELEASE_INFO=$(curl -s https://api.github.com/repos/${{ env.REPO_NAME }}/releases/latest)
           NEW_VERSION_LINK=$(echo "$LATEST_RELEASE_INFO" | grep "browser_download_url.*InterAACtionPlayer*" | cut -d: -f2,3 | tr -d \")
           NEW_VERSION=$( echo "${NEW_VERSION_LINK}" | cut -d/ -f9)
           NEW_VERSION_NO_EXT=$( echo ${NEW_VERSION} | cut -d. -f1)
