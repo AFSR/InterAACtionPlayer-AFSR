@@ -27,9 +27,9 @@ jobs:
 
       - name: Tar gz
         run: |
-          cd ./dist/InterAACtionPlayer
+          cd ./dist/
           tar -czvf InterAACtionPlayer.tar.gz *
-          mv InterAACtionPlayer.tar.gz ../../
+          mv InterAACtionPlayer.tar.gz ../
 
       - name: Get Env
         run: |
